@@ -27,23 +27,110 @@
 
 declare class WeixinApi {
 
+
+    /**
+     * 当页面加载完毕后执行，使用方法：
+     * WeixinApi.ready(function(Api:WeixinAPI){
+     * });
+     * @param readyCallback
+     */
     static ready(callback:Function):void;
 
+    /**
+     * 获取 WeixinAPI的版本号
+     */
     version:string;
 
+    /**
+     * 显示网页右上角的按钮
+     */
     showOptionMenu():void;
 
+    /**
+     * 隐藏网页右上角的按钮
+     */
     hideOptionMenu():void;
 
+    /**
+     * 显示底部工具栏
+     */
     showToolbar():void;
 
+    /**
+     * 隐藏底部工具栏
+     */
     hideToolbar():void;
 
-    getNetworkType():string
+    /**
+     * 返回如下几种类型：
+     *
+     * network_type:wifi     wifi网络
+     * network_type:edge     非wifi,包含3G/2G
+     * network_type:fail     网络断开连接
+     * network_type:wwan     2g或者3g
+     *
+     * 使用方法：
+     * WeixinApi.getNetworkType(function(networkType){
+     *
+     * });
+     *
+     * @param callback
+     */
+    getNetworkType(callback:Function):void
 
     imagePreview(currentImageUrl:string,allImageUrlArray:Array<string>):void;
 
+    /**
+     * 关闭当前微信公众平台页面
+     */
     closeWindow():void;
+
+    /**
+     * 设置当用户分享到好友后，会按照下述代码设置的数据定制
+     */
+    shareToFriend(shareInfo:WeixinShareInfo,callbacks?:WeixinShareCallbackInfo):void;
+
+    /**
+     * 设置当用户分享到朋友圈后，会按照下述代码设置的数据定制
+     */
+    shareToTimeline(shareInfo:WeixinShareInfo,callbacks?:WeixinShareCallbackInfo):void;
+
+    /**
+     * 设置当用户分享到腾讯微博后，会按照下述代码设置的数据定制
+     */
+    shareToWeibo(shareInfo:WeixinShareInfo,callbacks?:WeixinShareCallbackInfo):void;
+
+
+
+}
+
+declare class WeixinShareInfo {
+
+    appId:string;
+
+    imgUrl:string;
+
+    link:string;
+
+    desc:string;
+
+    title:string;
+
+}
+
+declare class WeixinShareCallbackInfo {
+
+    confirm:Function;
+
+    cancel:Function;
+
+    dataLoaded:Function;
+
+    ready:Function;
+
+    all:Function;
+
+
 
 
 }

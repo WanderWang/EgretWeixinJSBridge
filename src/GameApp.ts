@@ -129,8 +129,17 @@ class GameApp extends egret.DisplayObjectContainer{
 
         WeixinApi.ready(function(api:WeixinApi){
 
-            api.hideToolbar();
-            api.hideOptionMenu();
+            alert("WeixinAPI Ready!!");
+
+            var info:WeixinShareInfo = new WeixinShareInfo();
+            info.title = "HelloEgret";
+            info.desc = "欢迎使用Egret";
+            info.link = "www.egret-labs.org";
+//                        info.imageUrl = "";
+
+
+            api.shareToFriend(info);
+            api.shareToTimeline(info);
         })
 
 
