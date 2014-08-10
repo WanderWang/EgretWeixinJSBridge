@@ -14,7 +14,7 @@ EgretWeixinJSBridge
 
 * 复制 ``` bin/WeixinAPI.js ``` 到 游戏项目中的 ``` launcher/WeixinAPI.js ```
 * 复制 ``` libs/WeixinAPI.d.ts ``` 到 游戏项目中的 ``` libs/WeixinAPI.d.ts ```
-* 在游戏项目的 ``` index.html ``` 中添加 ``` <script src="launcher/WeixinAPI.js" async="false"></script> ```
+* 在游戏项目的 ``` index.html ``` 和 ``` release.html ``` 中添加 ``` <script src="launcher/WeixinAPI.js" async="false"></script> ```
 * 参考 GameApp.ts 中的调用方式，实现开发者的分享需求
 
 
@@ -41,3 +41,6 @@ EgretWeixinJSBridge
 
 
 ```
+
+
+上述代码只是在用户分享到好友、朋友圈时用自定义的分享内容，并不是实现直接弹出分享界面
