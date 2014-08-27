@@ -30,7 +30,7 @@ EgretWeixinJSBridge
             info.title = "HelloEgret";
             info.desc = "欢迎使用Egret";
             info.link = "www.egret-labs.org";
-//                        info.imageUrl = "";
+//                        info.imgUrl = "";
 
 
             api.shareToFriend(info);
