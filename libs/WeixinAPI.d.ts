@@ -76,7 +76,7 @@ declare class WeixinApi {
      *
      * @param callback
      */
-    getNetworkType(callback:Function):void
+    getNetworkType(callback:Function):void;
 
     imagePreview(currentImageUrl:string,allImageUrlArray:Array<string>):void;
 
